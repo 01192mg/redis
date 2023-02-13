@@ -1,6 +1,7 @@
 package com.example.redis.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -24,6 +25,7 @@ public class ExternalApiService {
         return "";
     }
 
+    @Cacheable(cacheNames = "userAgeCache", key = "#userId")
     public int getUserAge(String userId) {
         log.info("[getUserAge] userId={}", userId);
 

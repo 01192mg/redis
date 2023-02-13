@@ -1,7 +1,8 @@
 spring:
-  spring:
-    session:
-      store-type: redis
+  cache:
+    type: redis
+  session:
+    store-type: redis
   data:
     redis:
       host: localhost
